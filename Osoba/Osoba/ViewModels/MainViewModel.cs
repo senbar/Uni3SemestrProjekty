@@ -11,61 +11,51 @@ namespace Osoba.ViewModels
 {
     class MainViewModel : INotifyPropertyChanged
     {
-        private bool authorised = false;
+        private PersonContainer Data= new PersonContainer();
 
-        private Account account = new Account();
-
-        public string Saldo {
-            get
-            {
-                if (authorised)
-                    return account.Saldo.ToString();
-                return "Prosze wpisac poprawny pin";
-            }
-        }
-
-        public string Owner { get => Account.Owner; }
-
-        private string _enteredPin;
-        public string EnteredPin
+        private string _enteredYear;
+        public string EnteredYear
         {
             get
             {
-                return _enteredPin;
+                return _enteredYear;
             }
             set
             {
-                _enteredPin = value;
-                if (_enteredPin == Account.Pin.ToString())
-                {
-                    authorised = true;
-                }
-                else
-                {
-                    authorised = false;
-                }
-                RaisePropertyChangedEvent("Saldo");
+                _enteredYear = value;
+                RaisePropertyChangedEvent("EnteredYear");
             }
         }
 
-
-        public string EnteredWithdrawAmount { get; set; }
-
-        public ICommand WithdrawCommand
+        private string _enteredName;
+        public string EnteredName
         {
-            get { return new DelegateCommand(Withdraw); }
-        }
-        private void Withdraw()
-        {
-            if (!authorised)
-                return;
-            try
+            get
             {
-                account.Saldo -= int.Parse(EnteredWithdrawAmount);
+                return _enteredName;
             }
-            catch (Exception e) { }
-            RaisePropertyChangedEvent("Saldo");
-         
+            set
+            {
+                _enteredName = value;
+                RaisePropertyChangedEvent("EnteredName");
+            }
+        }
+
+        public ICommand FindPersonCommand 
+        {
+            get { return new DelegateCommand(FindPerson); }
+        }
+        private void FindPerson()
+        {
+            EnteredYear = Data.People.Where(x => x.FullName == EnteredName).First().BirthYear.ToString();
+        }
+
+        public ICommand SavePersonCommand 
+        {
+            get { return new DelegateCommand(SavePerson); }
+        }
+        private void SavePerson()
+        {
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

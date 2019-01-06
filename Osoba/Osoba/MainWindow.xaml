@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Osoba"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="250"
-        >
+        Title="MainWindow" Height="200" Width="250">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -15,10 +14,15 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Content="{Binding Path=Owner, Mode=OneWay}" HorizontalAlignment="Center"/>
-        <Label Content="{Binding Path=Saldo, Mode=OneWay}" HorizontalAlignment="Center" Grid.Row="1"/>
-        <TextBox Grid.Row="2" Text="{Binding Path=EnteredPin, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" VerticalAlignment="Center"/>
-        <Button Content="Wyplac" Command="{Binding Path=WithdrawCommand}" Grid.Row="3"/>
-        <TextBox Grid.Row="4" Text="{Binding Path=EnteredWithdrawAmount, Mode=OneWayToSource}" TextAlignment="Center" VerticalAlignment="Center"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Grid.Row="1" Content="Imie"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=EnteredName, Mode=TwoWay}" TextAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="0" Grid.Row="2" Content="Rok urodzenia"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=EnteredYear, Mode=TwoWay}" TextAlignment="Center"/>
+        <Button Content="Szukaj osoby" Command="{Binding Path=FindPersonCommand}" Grid.Column="0" Grid.Row="3"/>
+            <Button Content="Zapisz" Command="{Binding Path=SavePersonCommand}" Grid.Column="1" Grid.Row="3"/>
     </Grid>
 </Window>
