@@ -6,9 +6,8 @@
         xmlns:local="clr-namespace:Osoba"
         mc:Ignorable="d"
         Title="MainWindow" Height="200" Width="250">
-    <Grid>
+    <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -18,10 +17,12 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="0" Grid.Row="1" Content="Imie"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=EnteredName, Mode=TwoWay}" TextAlignment="Center" VerticalAlignment="Center"/>
-        <Label Grid.Column="0" Grid.Row="2" Content="Rok urodzenia"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=EnteredYear, Mode=TwoWay}" TextAlignment="Center"/>
+        <Label Grid.Column="0" Grid.Row="0" Content="Imie"/>
+        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Path=EnteredName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="0" Grid.Row="1" Content="Rok urodzenia"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=EnteredYear, Mode=TwoWay}" TextAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="0" Grid.Row="2" Content="Plec:"/>
+        <Label Grid.Column="1" Grid.Row="2" Content="{Binding Path= SexString, Mode=OneWay}"/>
         <Button Content="Szukaj osoby" Command="{Binding Path=FindPersonCommand}" Grid.Column="0" Grid.Row="3"/>
             <Button Content="Zapisz" Command="{Binding Path=SavePersonCommand}" Grid.Column="1" Grid.Row="3"/>
     </Grid>

@@ -8,19 +8,18 @@ namespace Osoba.Models
 {
     public partial class Person
     {
-        public enum SexEnum { Woman, Man }
 
         public int BirthYear;
         public string FullName;
         public string FirstName;
         public string LastName;
 
-        public SexEnum Sex {
+        public string Sex {
             get
             {
-                if (FirstName[-1] == 'a')
-                    return SexEnum.Woman;
-                return SexEnum.Man;
+                if (FirstName.Last() == 'a')
+                    return "Kobieta";
+                return "Mezczyzna";
             }
         }
 
