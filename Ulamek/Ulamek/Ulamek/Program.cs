@@ -32,12 +32,13 @@ namespace Ulamek
                     );
                 } while (idenominator == 0);
 
-                fractions[i] = new Fraction();
+                fractions[i] = new Fraction(inumerator,idenominator);
             }
 
             Console.WriteLine(String.Format("iloczyn tych ulamkow to {0}/{1}",(fractions[0]*fractions[1]).Numerator,
                 (fractions[0]*fractions[1]).Denominator));
-            
+
+            Console.ReadKey();
 
         }
     }
