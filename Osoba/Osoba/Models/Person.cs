@@ -13,6 +13,7 @@ namespace Osoba.Models
         public string FullName;
         public string FirstName;
         public string LastName;
+        public string Pesel;
 
         public string Sex {
             get
@@ -23,8 +24,10 @@ namespace Osoba.Models
             }
         }
 
-        public Person(string name,string birthYear)
+        public Person(string name,string birthYear, string pesel)
         {
+            this.Pesel = pesel;
+
             string[] splitted = name.Split(' ');
             if (splitted.Count() != 2)
                 throw new Exception();
