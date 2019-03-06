@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciagi", "Ciagi\Ciagi.csproj", "{55E7E388-C6FF-4965-9F0B-DF4B0E3EE641}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55E7E388-C6FF-4965-9F0B-DF4B0E3EE641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55E7E388-C6FF-4965-9F0B-DF4B0E3EE641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55E7E388-C6FF-4965-9F0B-DF4B0E3EE641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55E7E388-C6FF-4965-9F0B-DF4B0E3EE641}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDC97181-80F3-40AD-B760-678D2C69879B}
+	EndGlobalSection
+EndGlobal

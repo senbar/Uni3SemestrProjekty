@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Konto"
         mc:Ignorable="d"
-        Title="MainWindow" Height="150" Width="250"
+        Title="MainWindow" Height="250" Width="250"
         >
-    <Grid>
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -15,8 +15,8 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Content="{Binding Path=Owner, Mode=OneWay}" HorizontalAlignment="Center"/>
-        <Label Content="{Binding Path=Saldo, Mode=OneWay}" HorizontalAlignment="Center" Grid.Row="1"/>
+        <Label Content="{Binding Path=Owner, Mode=OneWay}" HorizontalAlignment="Center" Padding="10"/>
+        <Label Content="{Binding Path=Saldo, Mode=OneWay}" HorizontalAlignment="Center" Padding="10" Grid.Row="1"/>
         <TextBox Grid.Row="2" Text="{Binding Path=EnteredPin, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" VerticalAlignment="Center"/>
         <Button Content="Wyplac" Command="{Binding Path=WithdrawCommand}" Grid.Row="3"/>
         <TextBox Grid.Row="4" Text="{Binding Path=EnteredWithdrawAmount, Mode=OneWayToSource}" TextAlignment="Center" VerticalAlignment="Center"/>
