@@ -83,7 +83,7 @@ namespace Osoba.ViewModels
         private void SavePerson()
         {
             if(Data.People.Find(x=> x.FullName== EnteredName)==null)
-                Data.People.Add(new Person(EnteredName, EnteredYear));
+                Data.People.Add(new Person(EnteredName, EnteredYear, "00000000"));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

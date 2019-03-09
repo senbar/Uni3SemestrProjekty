@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Osoba.Models
 {
-    public partial class Person
+    public class Person
     {
 
         public int BirthYear;
